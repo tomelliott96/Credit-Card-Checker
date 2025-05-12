@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Credit Card Checker – Luhn Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+
+    <h1>🔍 Credit Card Checker</h1>
+
+    <!-- ℹ️ Disclaimer -->
+    <p class="disclaimer-inline">
+      ⚠️ <strong>Note:</strong> This educational tool simulates how the Luhn algorithm works.
+      It does <em>not</em> verify real credit cards and has no connection to any financial institution.
+    </p>
+
+    <!-- Intro Text -->
+    <p class="intro">
+      Test a credit card number to see if it could be valid. Use your own or generate an example below.
+    </p>
+
+    <!-- 💳 Input + Generator Buttons -->
+    <section class="input-section">
+      <label for="card-number">Enter a card number:</label>
+      <div class="input-group">
+        <button id="generate-valid" class="secondary">🎲 Generate Valid</button>
+        <span class="or-label">or</span>
+        <button id="generate-invalid" class="secondary">❌ Generate Invalid</button>
+      </div>
+      <div class="input-group">
+        <input type="text" id="card-number" placeholder="e.g. 4539 6779 0801 6808" />
+      </div>
+      <p id="live-feedback"></p>
+
+      <button id="check-button" disabled>🔍 Check this number!</button>
+    </section>
+
+    <!-- 📊 Result -->
+    <section id="results" hidden>
+      <h2>🧾 Result</h2>
+
+      <div class="result-main">
+        <img id="issuer-logo" class="issuer-logo" src="" alt="" style="display: none;" />
+        <p id="result-message"></p>
+      </div>
+
+      <!-- 💡 Possible Fix -->
+      <div id="correction-hint" class="result-box"></div>
+    </section>
+
+    <!-- 🔎 Luhn Explanation -->
+    <section class="info">
+      <div class="info-box">
+        <h2>🔎 Curious how it works?</h2>
+        <p><strong>The Luhn algorithm</strong> is a simple and widely-used method to verify identification numbers like credit cards.</p>
+        <p>When a credit card number is entered, systems use the Luhn algorithm to check whether the number structure is mathematically plausible. It helps detect mistyped or invalid numbers before a transaction even starts.</p>
+        <p>The process includes the following steps:</p>
+        <ol>
+          <li>Start from the <strong>rightmost digit</strong> and move left, reversing the number internally.</li>
+          <li>Double every second digit (counting from the right).</li>
+          <li>If a doubled value is greater than 9, subtract 9.</li>
+          <li>Sum all the digits. If the total is divisible by 10, the number is <strong>likely valid</strong>.</li>
+        </ol>
+        <p>Also, the <strong>first digit</strong> often hints at the card issuer:</p>
+        <ul>
+          <li>3 → Amex (American Express)</li>
+          <li>4 → Visa</li>
+          <li>5 → Mastercard</li>
+          <li>6 → Discover</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 🔢 Step-by-Step Breakdown -->
+    <section id="breakdown-section" hidden>
+      <div class="info-box">
+        <h2>🔢 Step-by-Step Luhn Breakdown</h2>
+        <p class="intro">The Luhn algorithm processes the number from <strong>right to left</strong>. Here's how it works step by step:</p>
+
+        <!-- Step 1 -->
+        <h3>Step 1: Reverse the Number</h3>
+        <div id="reversal-output" class="result-box">
+          <strong>Credit card number:</strong> <span id="original-number"></span><br>
+          <strong>Reversed credit card number:</strong> <span id="reversed-number"></span>
+        </div>
+
+        <!-- Step 2 -->
+        <h3>Step 2: Performing the corresponding calculation</h3>
+        <table id="luhn-table">
+          <thead>
+            <tr>
+              <th>Reversed Digit</th>
+              <th>Action</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody id="luhn-table-body"></tbody>
+        </table>
+
+        <!-- Step 3 -->
+        <h3>Step 3: Sum all digits</h3>
+        <div id="sum-values" class="result-box"></div>
+        <div id="sum-output"></div>
+
+        <!-- Step 4 -->
+        <h3>Step 4: Check validity</h3>
+        <p>If the total sum is divisible by 10, the number is <strong>valid</strong>. Otherwise, it's <strong>invalid</strong>.</p>
+        <p id="validity-check-output" class="result-box"></p>
+    </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

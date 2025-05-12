@@ -1,0 +1,265 @@
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8fafc;
+  color: #1f2937;
+}
+
+h1, h2 {
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.intro {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ℹ️ Disclaimer (inline) */
+.disclaimer-inline {
+  background-color: #fef3c7;
+  color: #92400e;
+  border-left: 4px solid #facc15;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+/* Eingabe */
+.input-section {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+input[type="text"] {
+  flex: 1 1 240px;
+  max-width: 400px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+}
+
+input.valid {
+  border-color: #22c55e;
+  background-color: #ecfdf5;
+}
+
+input.invalid {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.or-label {
+  font-style: italic;
+  color: #64748b;
+  margin: 0 0.5rem;
+}
+
+/* Buttons */
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+button.secondary:hover {
+  background-color: #cbd5e1;
+}
+
+#check-button {
+  margin-top: 1rem;
+  background-color: #2563eb;
+  color: white;
+  width: 100%;
+  max-width: 300px;
+}
+
+#check-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Feedback */
+#live-feedback {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  min-height: 1.2em;
+}
+
+/* Ergebnisfeld */
+#results {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.result-main {
+  text-align: center;
+}
+
+#result-message {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.valid {
+  color: #15803d;
+}
+
+.invalid {
+  color: #dc2626;
+}
+
+.issuer-logo {
+  display: block;
+  max-width: 120px;
+  margin: 1rem auto;
+}
+
+/* Step-by-Step Breakdown */
+#reversal-output {
+  padding: 1rem;
+  background-color: #f1f5f9;
+  border-left: 4px solid #64748b;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+#reversal-output span {
+  font-family: monospace;
+}
+
+#steps-output {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.luhn-step {
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 140px;
+}
+
+.step-static {
+  background-color: #e5e7eb;
+}
+
+.step-calculated {
+  background-color: #fef08a;
+}
+
+.luhn-step .label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.luhn-step .calculation {
+  font-size: 0.85rem;
+  color: #334155;
+  margin-top: 0.3rem;
+}
+
+/* Sum Output */
+#sum-output {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  background-color: #f8fafc;
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid #94a3b8;
+  border-radius: 6px;
+}
+
+/* Info Block */
+.info {
+  margin: 2rem 0;
+}
+
+.info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.info ul {
+  padding-left: 1.5rem;
+}
+
+/* Info Box Wrapper */
+.info-box {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Tabellenoptik */
+#luhn-table td,
+#luhn-table th {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.95rem;
+  text-align: center;
+  width: 33%;
+}
+
+/* Zeile mit tatsächlicher ×2-Aktion optisch hervorheben */
+.luhn-active-row {
+  background-color: #fef9c3; /* dezentes Gelb */
+}
+
+#validity-check-output {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #f1f5f9;
+  border-left: 4px solid #94a3b8;
+  border-radius: 6px;
+}
+
+.valid {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.invalid {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+
