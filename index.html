@@ -11,7 +11,7 @@
 
     <h1>🔍 Credit Card Checker</h1>
 
-    <!-- ℹ️ Disclaimer -->
+    <!-- Disclaimer -->
     <p class="disclaimer-inline">
       ⚠️ <strong>Note:</strong> This educational tool simulates how the Luhn algorithm works.
       It does <em>not</em> verify real credit cards and has no connection to any financial institution.
@@ -22,7 +22,7 @@
       Test a credit card number to see if it could be valid. Use your own or generate an example below.
     </p>
 
-    <!-- 💳 Input + Generator Buttons -->
+    <!-- Input + Generator Buttons -->
     <section class="input-section">
       <label for="card-number">Enter a card number:</label>
       <div class="input-group">
@@ -38,7 +38,7 @@
       <button id="check-button" disabled>🔍 Check this number!</button>
     </section>
 
-    <!-- 📊 Result -->
+    <!-- Result -->
     <section id="results" hidden>
       <h2>🧾 Result</h2>
 
@@ -47,11 +47,11 @@
         <p id="result-message"></p>
       </div>
 
-      <!-- 💡 Possible Fix -->
+      <!-- Possible Fix -->
       <div id="correction-hint" class="result-box"></div>
     </section>
 
-    <!-- 🔎 Luhn Explanation -->
+    <!-- Luhn Explanation -->
     <section class="info">
       <div class="info-box">
         <h2>🔎 Curious how it works?</h2>
@@ -74,14 +74,14 @@
       </div>
     </section>
 
-    <!-- 🔢 Step-by-Step Breakdown -->
+    <!-- Step-by-Step Breakdown -->
     <section id="breakdown-section" hidden>
       <div class="info-box">
         <h2>🔢 Step-by-Step Luhn Breakdown</h2>
         <p class="intro">The Luhn algorithm processes the number from <strong>right to left</strong>. Here's how it works step by step:</p>
 
         <!-- Step 1 -->
-        <h3>Step 1: Reverse the Number</h3>
+        <h3>Step 1: Reverse the number</h3>
         <div id="reversal-output" class="result-box">
           <strong>Credit card number:</strong> <span id="original-number"></span><br>
           <strong>Reversed credit card number:</strong> <span id="reversed-number"></span>
@@ -92,7 +92,7 @@
         <table id="luhn-table">
           <thead>
             <tr>
-              <th>Reversed Digit</th>
+              <th>Reversed digit</th>
               <th>Action</th>
               <th>Result</th>
             </tr>

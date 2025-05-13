@@ -1,4 +1,4 @@
-# 🧾 Credit Card Checker
+# 🔍 Credit Card Checker
 
 A browser-based tool that checks the validity of credit card numbers using the **Luhn algorithm** – with interactive visualization and step-by-step explanation
 
@@ -13,7 +13,7 @@ A browser-based tool that checks the validity of credit card numbers using the *
 
 ## 🔗 Live Demo
 
-👉 [Try the tool on GitHub Pages](https://tomelliott96.github.io/credit-card-checker/)
+👉 [Try the tool on GitHub Pages](https://tomelliott96.github.io/Credit-Card-Checker/)
 
 ---
 

@@ -1,5 +1,4 @@
-// script.js
-
+// Referencing DOM Elements
 const inputField = document.getElementById("card-number");
 const feedbackEl = document.getElementById("live-feedback");
 const checkButton = document.getElementById("check-button");
@@ -18,7 +17,7 @@ inputField.addEventListener("input", () => {
   inputField.value = formatted;
 
   if (/[^0-9\s]/.test(inputField.value)) {
-    feedbackEl.textContent = "❌ Ungültige Zeichen – nur Zahlen erlaubt.";
+    feedbackEl.textContent = "❌ Invalid characters - only numbers allowed.";
     inputField.classList.add("invalid");
     inputField.classList.remove("valid");
     checkButton.disabled = true;
@@ -26,7 +25,7 @@ inputField.addEventListener("input", () => {
   }
 
   if (raw.length < 13) {
-    feedbackEl.textContent = "ℹ️ Die Nummer ist noch zu kurz.";
+    feedbackEl.textContent = "ℹ️ The number is too short.";
     inputField.classList.add("invalid");
     inputField.classList.remove("valid");
     checkButton.disabled = true;
@@ -34,20 +33,20 @@ inputField.addEventListener("input", () => {
   }
 
   if (raw.length > 19) {
-    feedbackEl.textContent = "❌ Die Nummer ist zu lang.";
+    feedbackEl.textContent = "❌ The number is too long.";
     inputField.classList.add("invalid");
     inputField.classList.remove("valid");
     checkButton.disabled = true;
     return;
   }
 
-  feedbackEl.textContent = "✅ Sieht gut aus!";
+  feedbackEl.textContent = "✅ Looks good!";
   inputField.classList.remove("invalid");
   inputField.classList.add("valid");
   checkButton.disabled = false;
 });
 
-// Button-Click: Luhn-Prüfung starten
+// Button Click: Start Luhn Check
 checkButton.addEventListener("click", () => {
   const number = inputField.value.replace(/\s/g, "");
   const firstDigit = number[0];
@@ -63,8 +62,8 @@ checkButton.addEventListener("click", () => {
   resultsSection.hidden = false;
   breakdownSection.hidden = false;
   resultMessage.textContent = isValid
-    ? "✅ Diese Kartennummer ist gültig!"
-    : "❌ Diese Kartennummer ist ungültig.";
+    ? "✅ This card number is valid!"
+    : "❌ This card number is invalid.";
   resultMessage.className = isValid ? "valid" : "invalid";
 
   issuerLogo.style.display = "block";
@@ -97,7 +96,7 @@ checkButton.addEventListener("click", () => {
   }
 
 
-  // Step 2: Tabelle aufbauen
+  // Step 2: table
   luhnTableBody.innerHTML = "";
   let sum = 0;
   reversed.forEach((digit, index) => {
@@ -127,7 +126,7 @@ checkButton.addEventListener("click", () => {
     luhnTableBody.insertAdjacentHTML("beforeend", row);
   });
 
-  // Summe anzeigen
+  // Display sum
   const transformedValues = reversed.map((digit, index) => {
     if (index % 2 === 1) {
       const doubled = digit * 2;
@@ -145,14 +144,14 @@ checkButton.addEventListener("click", () => {
     : "<span class='invalid'>invalid ❌</span>"
   }`;
 
-  // Original & Reversed Zahl anzeigen
+  // Display original & reversed number
   const originalDigits = number.split("").join(" ");
   const reversedDigits = reversed.join(" ");
   document.getElementById("original-number").textContent = originalDigits;
   document.getElementById("reversed-number").textContent = reversedDigits;
 });
 
-// Luhn-Prüfung (identisch mit dem Check-Handler)
+// Luhn check (same as check handler)
 function luhnCheck(number) {
   const digits = number.split("").map(Number).reverse();
   const sum = digits.map((digit, index) => {
@@ -166,7 +165,7 @@ function luhnCheck(number) {
   return sum % 10 === 0;
 }
 
-// Prüfziffer berechnen für gültige Karten
+// Calculate check digit for valid cards
 function calculateLuhnCheckDigit(digits) {
   const fullDigits = [...digits, 0];
   const reversed = fullDigits.slice().reverse();
@@ -183,7 +182,7 @@ function calculateLuhnCheckDigit(digits) {
   return mod10 === 0 ? 0 : 10 - mod10;
 }
 
-// Zufällige gültige Nummer generieren
+// Generate random valid number
 function generateValidCardNumber() {
   const length = Math.floor(Math.random() * 7) + 13; // 13–19
   const digits = [];
@@ -198,7 +197,7 @@ function generateValidCardNumber() {
   return formatCardNumber(digits.join(""));
 }
 
-// Ungültige Nummer generieren
+// Generate random invalid number
 function generateInvalidCardNumber() {
   const valid = generateValidCardNumber().replace(/\s/g, "");
   const digits = valid.split("").map(Number);
@@ -213,12 +212,12 @@ function generateInvalidCardNumber() {
   return formatCardNumber(digits.join(""));
 }
 
-// Leerzeichen einfügen für UI
+// Insert spaces for UI
 function formatCardNumber(raw) {
   return raw.match(/.{1,4}/g).join(" ");
 }
 
-// Button-Events
+// Button-events
 document.getElementById("generate-valid").addEventListener("click", () => {
   const number = generateValidCardNumber();
   inputField.value = number;

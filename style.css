@@ -17,7 +17,6 @@ h1, h2 {
   margin-bottom: 1.5rem;
 }
 
-/* ℹ️ Disclaimer (inline) */
 .disclaimer-inline {
   background-color: #fef3c7;
   color: #92400e;
@@ -28,7 +27,7 @@ h1, h2 {
   margin: 1rem 0;
 }
 
-/* Eingabe */
+/* Input */
 .input-section {
   background-color: #ffffff;
   border: 1px solid #cbd5e1;
@@ -70,7 +69,6 @@ input.invalid {
   margin: 0 0.5rem;
 }
 
-/* Buttons */
 button {
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
@@ -106,14 +104,12 @@ button.secondary:hover {
   background-color: #1d4ed8;
 }
 
-/* Feedback */
 #live-feedback {
   font-size: 0.95rem;
   margin-top: 0.5rem;
   min-height: 1.2em;
 }
 
-/* Ergebnisfeld */
 #results {
   background-color: #ffffff;
   padding: 1.5rem;
@@ -146,7 +142,6 @@ button.secondary:hover {
   margin: 1rem auto;
 }
 
-/* Step-by-Step Breakdown */
 #reversal-output {
   padding: 1rem;
   background-color: #f1f5f9;
@@ -197,7 +192,6 @@ button.secondary:hover {
   margin-top: 0.3rem;
 }
 
-/* Sum Output */
 #sum-output {
   margin-top: 0.5rem;
   font-size: 1rem;
@@ -207,7 +201,6 @@ button.secondary:hover {
   border-radius: 6px;
 }
 
-/* Info Block */
 .info {
   margin: 2rem 0;
 }
@@ -221,7 +214,6 @@ button.secondary:hover {
   padding-left: 1.5rem;
 }
 
-/* Info Box Wrapper */
 .info-box {
   background-color: #f8fafc;
   border: 1px solid #cbd5e1;
@@ -230,7 +222,6 @@ button.secondary:hover {
   margin-top: 1rem;
 }
 
-/* Tabellenoptik */
 #luhn-table td,
 #luhn-table th {
   padding: 0.4rem 0.6rem;
@@ -239,9 +230,8 @@ button.secondary:hover {
   width: 33%;
 }
 
-/* Zeile mit tatsächlicher ×2-Aktion optisch hervorheben */
 .luhn-active-row {
-  background-color: #fef9c3; /* dezentes Gelb */
+  background-color: #fef9c3;
 }
 
 #validity-check-output {
