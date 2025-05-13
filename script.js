@@ -135,7 +135,7 @@ checkButton.addEventListener("click", () => {
     return digit;
   });
   
-  sumOutput.innerHTML = `<strong>Gesamtsumme:</strong> ${transformedValues.join(" + ")} = <strong>${transformedValues.reduce((a, b) => a + b, 0)}</strong>`;
+  sumOutput.innerHTML = `<strong>Total sum:</strong> ${transformedValues.join(" + ")} = <strong>${transformedValues.reduce((a, b) => a + b, 0)}</strong>`;
 
   const validityCheckEl = document.getElementById("validity-check-output");
   const modulo = sum % 10;
